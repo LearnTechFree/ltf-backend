@@ -12,11 +12,6 @@ type Article{
     updatedAt:String
 }
 
-type Query{
-    listArticles(count:Int):[Article],
-    getArticle(id:ID):Article
-}
-
 input ArticleInput{
     title:String,
     subTitle:String,
@@ -27,6 +22,18 @@ input ArticleInput{
     scheduledAt:String
 }
 
+
+
+
+# The root query for application
+type Query{
+    listArticles(count:Int):[Article],
+    getArticle(id:ID):Article
+}
+
+
+
+# The root mutation for application
 type Mutation{
     createArticle(
         input:ArticleInput

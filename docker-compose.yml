@@ -1,0 +1,17 @@
+version: '3.3'
+
+services:
+  lft-graphql-db:
+    image: mysql:5.7
+    container_name: 'lft-springboot-graphql-db'
+    restart: 'no'
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./db/data:/var/lib/mysql
+      - ./db/logs:/var/log/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 'apple'
+      MYSQL_DATABASE: 'lft-graphql-db'
+      MYSQL_USER: 'lft-graphql-user'
+      MYSQL_PASSWORD: 'lft-graphql-pass'

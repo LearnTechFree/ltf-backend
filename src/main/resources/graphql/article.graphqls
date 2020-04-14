@@ -1,0 +1,36 @@
+
+type Article{
+    id: ID!,
+    title:String!,
+    subTitle:String,
+    body:String,
+    featureImageUrl:String,
+    userId:String,
+    publishedAt:String,
+    scheduledAt:String,
+    createdAt:String,
+    updatedAt:String
+}
+
+type Query{
+    listArticles(count:Int):[Article],
+    getArticle(id:ID):Article
+}
+
+input ArticleInput{
+    title:String,
+    subTitle:String,
+    body:String,
+    featureImageUrl:String,
+    userId:String,
+    publishedAt:String,
+    scheduledAt:String
+}
+
+type Mutation{
+    createArticle(
+        input:ArticleInput
+    ):Article
+}
+
+

@@ -27,17 +27,15 @@ input ArticleInput{
 
 # The root query for application
 type Query{
-    listArticles(count:Int):[Article],
-    getArticle(id:ID):Article
+    hello:String
 }
 
 
 
 # The root mutation for application
 type Mutation{
-    createArticle(
-        input:ArticleInput
-    ):Article
+    createArticle:String
 }
+
 
 

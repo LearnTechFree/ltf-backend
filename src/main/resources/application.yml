@@ -6,10 +6,27 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     properties:
       hibernate:
         dilect: org.hibernate.dialect.MySQL5Dialect
 
 server:
     port: 5000
+
+graphql:
+  servlet:
+    mapping: /graphql
+    enabled: true
+    corsEnabled: true
+  tools:
+    schema-location-pattern: "**/*.graphqls"
+
+graphiql:
+  mapping: /graphiql
+  endpoint:
+    graphql: /graphql
+    subscriptions: /subscriptions
+  enabled: true
+  cdn:
+    enabled: true

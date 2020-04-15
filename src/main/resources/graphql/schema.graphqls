@@ -27,7 +27,8 @@ input ArticleInput{
 
 # The root query for application
 type Query{
-    hello:String
+    hello:String,
+    listArticles:[Article]
 }
 
 

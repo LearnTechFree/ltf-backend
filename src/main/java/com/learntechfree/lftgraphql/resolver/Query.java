@@ -1,18 +1,22 @@
 package com.learntechfree.lftgraphql.resolver;
 
-import com.learntechfree.lftgraphql.article.ArticleController;
+import com.learntechfree.lftgraphql.article.Article;
+import com.learntechfree.lftgraphql.article.ArticleRepository;
 import graphql.kickstart.tools.GraphQLQueryResolver;
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
 import java.util.List;
 
-@Component
+@Controller
 public class Query implements GraphQLQueryResolver {
-    private ArticleController articleController;
 
-    public Query(ArticleController articleController){
+    @Autowired
+    private ArticleRepository articleRepository;
+
+    public Query(ArticleRepository articleRepository){
         System.out.println("here in query");
-        this.articleController = articleController;
+        this.articleRepository = articleRepository;
     }
 
     public Query(){
@@ -20,6 +24,10 @@ public class Query implements GraphQLQueryResolver {
 
     public String hello(){
         return "Hello world";
+    }
+
+    public List<Article> listArticles(){
+       return this.articleRepository.findAll();
     }
 
 }

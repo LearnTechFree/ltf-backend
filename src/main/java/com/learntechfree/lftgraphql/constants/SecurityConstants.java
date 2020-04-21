@@ -1,6 +1,7 @@
 package com.learntechfree.lftgraphql.constants;
 
 public class SecurityConstants {
+
     // FIXME: change for graphql
     public static final String AUTH_LOGIN_URL = "/api/authenticate";
 
@@ -14,6 +15,9 @@ public class SecurityConstants {
     public static final String TOKEN_TYPE = "JWT";
     public static final String TOKEN_ISSUER = "secure-api";
     public static final String TOKEN_AUDIENCE = "secure-app";
+
+    // Token expiry of one day
+    public static final Integer TOKEN_EXPIRY_MILLISECOND = 24 * 60 * 60 * 100;
 
     private SecurityConstants() {
         throw new IllegalStateException("Cannot create instance of static util class");

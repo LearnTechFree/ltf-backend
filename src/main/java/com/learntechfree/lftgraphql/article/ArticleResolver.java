@@ -1,17 +1,15 @@
 package com.learntechfree.lftgraphql.article;
 
-import graphql.kickstart.tools.GraphQLResolver;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Optional;
 
-@Component
-public class ArticleResolver implements GraphQLResolver<Article> {
-    @Autowired
-    private ArticleService articleService;
-
-    public Optional<Article> getArticle(Long id){
-        return articleService.getArticle(id);
+@RestController
+@RequestMapping("/api/public")
+public class ArticleResolver{
+    @GetMapping
+    public String getMessage() {
+        return "Hello from public API controller";
     }
 }

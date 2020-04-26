@@ -1,4 +1,4 @@
-package com.learntechfree.ltfgraphql.article;
+package com.learntechfree.ltf.article;
 
 import graphql.kickstart.tools.GraphQLResolver;
 import org.springframework.beans.factory.annotation.Autowired;

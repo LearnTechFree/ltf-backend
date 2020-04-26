@@ -1,4 +1,4 @@
-package com.learntechfree.ltfgraphql.article;
+package com.learntechfree.ltf.article;
 
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;

@@ -1,7 +1,7 @@
-package com.learntechfree.ltfgraphql.resolver;
+package com.learntechfree.ltf.resolver;
 
-import com.learntechfree.ltfgraphql.article.Article;
-import com.learntechfree.ltfgraphql.article.ArticleRepository;
+import com.learntechfree.ltf.article.Article;
+import com.learntechfree.ltf.article.ArticleRepository;
 import graphql.kickstart.tools.GraphQLQueryResolver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

@@ -1,4 +1,4 @@
-package com.learntechfree.ltfgraphql.resolver;
+package com.learntechfree.ltf.resolver;
 
 import graphql.kickstart.tools.GraphQLMutationResolver;
 import org.springframework.stereotype.Component;

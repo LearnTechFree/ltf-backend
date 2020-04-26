@@ -1,4 +1,4 @@
-package com.learntechfree.ltfgraphql.article;
+package com.learntechfree.ltf.article;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

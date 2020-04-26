@@ -21,7 +21,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http.cors().
                 and()
                 .authorizeRequests()
-                .antMatchers("/api/public", "/graphiql")
+                .antMatchers("**/graphql/**")
                 .permitAll()
                 .anyRequest()
                 .authenticated()

@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.sql.Timestamp;
 @Entity
-@Table(uniqueConstraints = {
+@Table(name = "articles",uniqueConstraints = {
         @UniqueConstraint(columnNames = "title")
 })
 

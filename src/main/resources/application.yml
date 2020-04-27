@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/ltf-graphql-db?useSSL=false
-    username: ltf-graphql-user
-    password: ltf-graphql-pass
+    url: jdbc:postgresql://localhost:5432/ltf_database?useSSL=false
+    username: postgres
+    password: postgres
   jpa:
     show-sql: true
     hibernate:

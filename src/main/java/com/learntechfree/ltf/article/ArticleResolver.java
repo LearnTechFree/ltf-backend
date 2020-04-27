@@ -1,5 +1,6 @@
 package com.learntechfree.ltf.article;
 
+import com.learntechfree.ltf.entity.Article;
 import graphql.kickstart.tools.GraphQLResolver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

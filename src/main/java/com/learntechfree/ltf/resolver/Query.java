@@ -1,33 +1,42 @@
 package com.learntechfree.ltf.resolver;
 
-import com.learntechfree.ltf.article.ArticleRepository;
+import com.learntechfree.ltf.article.ArticleService;
+import com.learntechfree.ltf.category.CategoryService;
 import com.learntechfree.ltf.entity.Article;
+import com.learntechfree.ltf.entity.Category;
+import com.learntechfree.ltf.entity.Subject;
+import com.learntechfree.ltf.entity.Unit;
+import com.learntechfree.ltf.subject.SubjectService;
+import com.learntechfree.ltf.unit.UnitService;
 import graphql.kickstart.tools.GraphQLQueryResolver;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 
 import java.util.List;
 
 @Controller
+@RequiredArgsConstructor
 public class Query implements GraphQLQueryResolver {
 
-    @Autowired
-    private ArticleRepository articleRepository;
-
-    public Query(ArticleRepository articleRepository){
-        System.out.println("here in query");
-        this.articleRepository = articleRepository;
-    }
-
-    public Query(){
-    }
-
-    public String hello(){
-        return "Hello world";
-    }
+    private final ArticleService articleService;
+    private final CategoryService categoryService;
+    private final SubjectService subjectService;
+    private final UnitService unitService;
 
     public List<Article> listArticles(){
-       return this.articleRepository.findAll();
+       return articleService.listArticles(10);
     }
+
+    public List<Category> listCategories(){
+        return categoryService.listCategories();
+    }
+ public List<Unit> listUnits(){
+        return unitService.listUnits();
+    }
+ public List<Subject> listSubjects(){
+        return subjectService.listSubjects();
+    }
+
+
 
 }

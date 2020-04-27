@@ -1,17 +1,20 @@
 package com.learntechfree.ltf.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.Set;
+
 @Entity
 @Table(name = "articles",uniqueConstraints = {
-        @UniqueConstraint(columnNames = "title")
+        @UniqueConstraint(columnNames = {"title","slug"})
 })
 
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class Article extends AuditModel {
@@ -42,10 +45,6 @@ public class Article extends AuditModel {
     @Column
     private String featureImageUrl;
 
-    // FIXME: relation
-    @Column
-    private Long unitId;
-
     @Column(updatable = false, nullable = false)
     private Long createdBy;
 
@@ -63,5 +62,18 @@ public class Article extends AuditModel {
 
     @Column
     private Timestamp scheduledAt;
+
+    /**
+     * @nullable true for blog article
+     */
+    @ManyToOne()
+    @JoinColumn(name = "unit_id", nullable = true)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private Unit unit;
+
+
+    @OneToMany(mappedBy = "article")
+    private Set<ArticleRevision> articleRevisions;
+
 
 }

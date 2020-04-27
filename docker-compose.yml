@@ -1,9 +1,9 @@
 version: '3.3'
 
 services:
-  lft-graphql-db:
+  ltf-mysql-db:
     image: mysql:5.7
-    container_name: 'lft-springboot-graphql-db'
+    container_name: 'ltf-mysql-db'
     restart: 'no'
     ports:
       - '3306:3306'

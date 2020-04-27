@@ -1,15 +1,15 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/lft-graphql-db?useSSL=false
-    username: lft-graphql-user
-    password: lft-graphql-pass
+    url: jdbc:postgresql://localhost:5432/ltf_database?useSSL=false
+    username: postgres
+    password: postgres
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     properties:
       hibernate:
-        dilect: org.hibernate.dialect.MySQL5Dialect
+        dilect: org.hibernate.dialect.PostgreSQLDialect
 
 server:
     port: 5000

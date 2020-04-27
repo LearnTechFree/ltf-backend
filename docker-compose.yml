@@ -1,17 +1,17 @@
-version: '3.3'
+version: '3.7'
 
 services:
   lft-graphql-db:
-    image: mysql:5.7
-    container_name: 'lft-springboot-graphql-db'
+    image: "postgres"
+    container_name: 'ltf-postgres-db'
     restart: 'no'
     ports:
-      - '3306:3306'
+      - '5432:5432'
     volumes:
-      - ./db/data:/var/lib/mysql
-      - ./db/logs:/var/log/mysql
+      - ./db/data:/var/lib/postgresql/data/
     environment:
-      MYSQL_ROOT_PASSWORD: 'apple'
-      MYSQL_DATABASE: 'lft-graphql-db'
-      MYSQL_USER: 'lft-graphql-user'
-      MYSQL_PASSWORD: 'lft-graphql-pass'
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: ltf_database
+      PGDATA : /var/lib/postgresql/data/pgdata
+

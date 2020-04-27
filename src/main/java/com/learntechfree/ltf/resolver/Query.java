@@ -22,12 +22,16 @@ public class Query implements GraphQLQueryResolver {
     public Query(){
     }
 
+
     public String hello(){
         return "Hello world";
     }
 
+
     public List<Article> listArticles(){
        return this.articleRepository.findAll();
     }
+
+
 
 }

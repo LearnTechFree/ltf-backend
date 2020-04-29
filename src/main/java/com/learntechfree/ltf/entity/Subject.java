@@ -1,13 +1,20 @@
 package com.learntechfree.ltf.entity;
 
-
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
-import javax.persistence.*;
-import javax.websocket.server.ServerEndpoint;
-import java.util.Set;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import java.util.List;
 
 @Entity
 @Table(name = "subjects")
@@ -25,7 +32,7 @@ public class Subject extends AuditModel {
     private String description;
 
     @Column
-    private String universities ;
+    private String universities;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "category_id", nullable = false)
@@ -33,6 +40,6 @@ public class Subject extends AuditModel {
     private Category category;
 
     @OneToMany(mappedBy = "subject")
-    private Set<Unit> units;
-
+    private List<Unit> units;
 }
+

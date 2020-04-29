@@ -13,7 +13,7 @@ public class CategoryResolver implements GraphQLResolver<Category> {
 
     private final SubjectService subjectService;
 
-    public List<Subject> subjects(Category category){
+    public List<Subject> subjects(Category category) {
         return (List<Subject>) subjectService.finaAllSubjectsForCategory(category);
     }
 }

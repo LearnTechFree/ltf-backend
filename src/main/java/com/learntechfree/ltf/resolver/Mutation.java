@@ -1,7 +1,6 @@
 package com.learntechfree.ltf.resolver;
 
 import com.learntechfree.ltf.article.ArticleService;
-import com.learntechfree.ltf.entity.Article;
 import graphql.kickstart.tools.GraphQLMutationResolver;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;

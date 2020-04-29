@@ -1,4 +1,3 @@
-
 type Article{
     id: ID!
     title:String!
@@ -18,11 +17,8 @@ type ArticleRevision{
     id:ID!
     title:String
     subTitle:String
-    slug:String
+    postName:String
     body:String
-    status:String
-    tags:String
-    featureImageUrl:String
     createdAt:String
     updatedAt:String
 }
@@ -58,13 +54,11 @@ type Unit {
 }
 
 type Query{
-    articles:[Article]
-    categories:[Category]
-    subjects:[Subject]
-    units:[Unit]
+    articles:[Article!]!
+    categories:[Category!]!
+    subjects:[Subject!]!
+    units:[Unit!]!
 }
-
-
 
 type Mutation{
 }

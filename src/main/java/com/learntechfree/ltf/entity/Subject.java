@@ -13,8 +13,6 @@ import java.util.Set;
 @Table(name = "subjects")
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class Subject extends AuditModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

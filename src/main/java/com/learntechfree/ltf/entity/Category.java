@@ -9,8 +9,6 @@ import java.util.Set;
 @Table(name = "categories")
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
 public class Category extends AuditModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -11,8 +11,6 @@ import java.util.Set;
 @Table(name = "units")
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
 public class Unit extends AuditModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

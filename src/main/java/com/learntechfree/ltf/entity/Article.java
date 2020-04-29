@@ -13,8 +13,6 @@ import java.util.Set;
 
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
 public class Article extends AuditModel {
 
     @Id

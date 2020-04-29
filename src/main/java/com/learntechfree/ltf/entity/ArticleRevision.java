@@ -12,8 +12,6 @@ import javax.persistence.*;
 @Table(name = "article_revisions")
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
 public class ArticleRevision extends AuditModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

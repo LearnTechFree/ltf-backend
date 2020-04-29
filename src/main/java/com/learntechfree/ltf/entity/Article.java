@@ -9,9 +9,7 @@ import java.sql.Timestamp;
 import java.util.Set;
 
 @Entity
-@Table(name = "articles",uniqueConstraints = {
-        @UniqueConstraint(columnNames = {"title","slug"})
-})
+@Table(name = "articles")
 
 @Getter
 @Setter
@@ -24,13 +22,13 @@ public class Article extends AuditModel {
     private Long id;
 
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String title;
 
     @Column
     private String subTitle;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String slug;
 
     @Column(nullable = false, columnDefinition = "TEXT")

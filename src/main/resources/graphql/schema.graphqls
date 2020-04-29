@@ -6,6 +6,7 @@ type Article{
     body:String
     featureImageUrl:String
     userId:String
+    tags:String
     publishedAt:String
     scheduledAt:String
     createdAt:String

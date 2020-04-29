@@ -12,7 +12,8 @@ public class ArticleResolver implements GraphQLResolver<Article> {
     @Autowired
     private ArticleService articleService;
 
-    public Optional<Article> getArticle(Long id){
+    public Optional<Article> getArticle(Long id) {
+        
         return articleService.getArticle(id);
     }
 }

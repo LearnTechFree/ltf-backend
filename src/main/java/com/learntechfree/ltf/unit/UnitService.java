@@ -11,7 +11,8 @@ public class UnitService {
     @Autowired
     private UnitRepository unitRepository;
 
-    public List<Unit> listUnits(){
+    public List<Unit> listUnits() {
+        
         return unitRepository.findAll();
     }
 

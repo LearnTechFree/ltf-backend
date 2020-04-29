@@ -8,6 +8,6 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 public class Mutation implements GraphQLMutationResolver {
-    private final ArticleService articleService;
 
+    private final ArticleService articleService;
 }

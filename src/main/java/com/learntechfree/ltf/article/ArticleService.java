@@ -13,15 +13,18 @@ public class ArticleService {
     @Autowired
     private ArticleRepository articleRepository;
 
-    public Article createArticle(Article article){
+    public Article createArticle(Article article) {
+        
         return articleRepository.saveAndFlush(article);
     }
 
-    public List<Article> listArticles(int count){
+    public List<Article> listArticles(int count) {
+
         return articleRepository.findAll().stream().limit(count).collect(Collectors.toList());
     }
 
-    public Optional<Article> getArticle(Long id){
+    public Optional<Article> getArticle(Long id) {
+
         return articleRepository.findById(id);
     }
 

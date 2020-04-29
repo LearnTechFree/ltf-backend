@@ -11,7 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Getter
@@ -29,5 +29,5 @@ public class Category extends AuditModel {
     private String description;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "category")
-    private Set<Subject> subjects;
+    private List<Subject> subjects;
 }

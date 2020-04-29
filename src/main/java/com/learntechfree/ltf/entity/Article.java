@@ -63,9 +63,6 @@ public class Article extends AuditModel {
     @Column
     private Timestamp scheduledAt;
 
-    /**
-     * @nullable true for blog article
-     */
     @ManyToOne()
     @JoinColumn(name = "unit_id", nullable = true)
     @OnDelete(action = OnDeleteAction.CASCADE)

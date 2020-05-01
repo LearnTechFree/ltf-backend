@@ -1,41 +1,66 @@
-
 type Article{
-    id: ID!,
-    title:String!,
-    subTitle:String,
-    body:String,
-    featureImageUrl:String,
-    userId:String,
-    publishedAt:String,
-    scheduledAt:String,
-    createdAt:String,
+    id: ID!
+    title:String!
+    subTitle:String
+    body:String
+    featureImageUrl:String
+    userId:String
+    tags:String
+    publishedAt:String
+    scheduledAt:String
+    createdAt:String
+    updatedAt:String
+    unit:Unit
+}
+
+type ArticleRevision{
+    id:ID!
+    title:String
+    subTitle:String
+    postName:String
+    body:String
+    createdAt:String
     updatedAt:String
 }
 
-input ArticleInput{
-    title:String,
-    subTitle:String,
-    body:String,
-    featureImageUrl:String,
-    userId:String,
-    publishedAt:String,
-    scheduledAt:String
+
+
+type Category{
+    id:ID!
+    name:String
+    description:String
+    createdAt:String
+    updatedAt:String
+    subjects:[Subject!]
 }
 
+type Subject {
+    id:ID!
+    name:String
+    description:String
+    universities:String
+    category:Category
+    createdAt:String
+    updatedAt:String
+}
 
+type Unit {
+    id:ID!
+    name:String
+    description:String
+    subject:Subject
+    createdAt:String
+    updatedAt:String
+}
 
-
-# The root query for application
 type Query{
-    hello:String,
-    listArticles:[Article]
+    articles:[Article!]!
+    categories:[Category!]!
+    subjects:[Subject!]!
+    units:[Unit!]!
 }
 
-
-
-# The root mutation for application
 type Mutation{
-    createArticle:String
 }
 
 

@@ -34,3 +34,7 @@ build/
 
 /db/
 /db/*
+
+
+## application properties
+/src/main/resources/application.yml
